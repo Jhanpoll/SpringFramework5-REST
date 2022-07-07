@@ -12,9 +12,9 @@
 	<artifactId>HelloWorld</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>HelloWorld</name>
-	<description>Demo project for Spring Boot</description>
+	<description>realizando un hello world y llamando por el localhost</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
