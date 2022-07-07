@@ -13,19 +13,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Motor {
 	
-	@Value("marcaMotor1")
+	
 	private String marca;
-	
-	@Value("modeloMotor1")
 	private String modelo;
-	
 
-	public Motor() {
-		
-	}
-	
-	
-	public Motor(String marca, String modelo) {
+	public Motor(@Value("marcaMotor1")String marca,@Value("modeloMotor1") String modelo) {
 		super();
 		this.marca = marca;
 		this.modelo = modelo;

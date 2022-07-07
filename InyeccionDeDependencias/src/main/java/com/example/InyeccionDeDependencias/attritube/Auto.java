@@ -13,24 +13,19 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Auto {
-	@Value("modeloAuto1")
-	private String marca;
 	
-	@Value("modeloAuto1")
+	private String marca;	
 	private String modelo;
+	private Motor motor;
 	
 	@Autowired
-	private Motor motor;
-
-	public Auto() {
-	
-	}
-	public Auto(String marca, String modelo, Motor motor) {
+	public Auto(@Value("marcaoAuto1") String marca, @Value("modeloAuto1") String modelo, Motor motor) {
 		super();
 		this.marca = marca;
 		this.modelo = modelo;
 		this.motor = motor;
 	}
+	
 	public String getMarca() {
 		return marca;
 	}
