@@ -17,22 +17,19 @@ public class Motor {
 	private String marca;
 	private String modelo;
 
-	public Motor(@Value("marcaMotor1")String marca,@Value("modeloMotor1") String modelo) {
-		super();
-		this.marca = marca;
-		this.modelo = modelo;
-	}
 
 
 	public String getMarca() {
 		return marca;
 	}
+	@Value("marcaMotor1")
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
 	public String getModelo() {
 		return modelo;
 	}
+	@Value("modeloMotor1")
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}

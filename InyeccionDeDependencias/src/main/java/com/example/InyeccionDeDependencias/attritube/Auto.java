@@ -17,30 +17,26 @@ public class Auto {
 	private String marca;	
 	private String modelo;
 	private Motor motor;
-	
-	@Autowired
-	public Auto(@Value("marcaoAuto1") String marca, @Value("modeloAuto1") String modelo, Motor motor) {
-		super();
-		this.marca = marca;
-		this.modelo = modelo;
-		this.motor = motor;
-	}
+
 	
 	public String getMarca() {
 		return marca;
 	}
+	@Value("marcaoAuto1")
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
 	public String getModelo() {
 		return modelo;
 	}
+	@Value("modeloAuto1")
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
 	public Motor getMotor() {
 		return motor;
 	}
+	@Autowired
 	public void setMotor(Motor motor) {
 		this.motor = motor;
 	}
