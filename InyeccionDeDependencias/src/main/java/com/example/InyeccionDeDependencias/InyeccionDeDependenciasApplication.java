@@ -12,6 +12,7 @@ import com.example.InyeccionDeDependencias.Qualifier.Animal;
 import com.example.InyeccionDeDependencias.Qualifier.Avion;
 import com.example.InyeccionDeDependencias.Qualifier.Pajaro;
 import com.example.InyeccionDeDependencias.Qualifier.Perro;
+import com.example.InyeccionDeDependencias.Scopes.EjemploScopeService;
 import com.example.InyeccionDeDependencias.attritube.Auto;
 
 
@@ -25,7 +26,10 @@ public class InyeccionDeDependenciasApplication {
 	public static void main(String[] args) {
 
 		ConfigurableApplicationContext context = SpringApplication.run(InyeccionDeDependenciasApplication.class, args);
-		EnviromentService enviromentService = context.getBean(EnviromentService.class);
-		log.info("enviroment {} ",enviromentService.getEnviroment());
+		EjemploScopeService ejemploScopeService1 = context.getBean(EjemploScopeService.class);
+		EjemploScopeService ejemploScopeService2 = context.getBean(EjemploScopeService.class);
+		
+		log.info("son iguales a nivel de objeto = {}", ejemploScopeService1==ejemploScopeService2);
+		log.info("son iguales a nivel de valor = {}", ejemploScopeService1.equals(ejemploScopeService2));
 	}
 }
