@@ -17,8 +17,6 @@ public class Motor {
 	private String marca;
 	private String modelo;
 
-
-
 	public String getMarca() {
 		return marca;
 	}
@@ -38,5 +36,5 @@ public class Motor {
 	public String toString() {
 		return "Motor [marca=" + marca + ", modelo=" + modelo + "]";
 	}
-
+	
 }
