@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile({"dev","default"})
+@Profile("dev")
 public class DevEnviroment implements EnviromentService {
 
 	@Override
