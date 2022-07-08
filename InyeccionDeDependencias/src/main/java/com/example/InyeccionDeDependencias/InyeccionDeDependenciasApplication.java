@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import com.example.InyeccionDeDependencias.AutowiredFigure.AreaCalculator;
 import com.example.InyeccionDeDependencias.Profiles.EnviromentService;
 import com.example.InyeccionDeDependencias.Qualifier.Animal;
 import com.example.InyeccionDeDependencias.Qualifier.Avion;
@@ -26,10 +27,7 @@ public class InyeccionDeDependenciasApplication {
 	public static void main(String[] args) {
 
 		ConfigurableApplicationContext context = SpringApplication.run(InyeccionDeDependenciasApplication.class, args);
-		EjemploScopeService ejemploScopeService1 = context.getBean(EjemploScopeService.class);
-		EjemploScopeService ejemploScopeService2 = context.getBean(EjemploScopeService.class);
-		
-		log.info("son iguales a nivel de objeto = {}", ejemploScopeService1==ejemploScopeService2);
-		log.info("son iguales a nivel de valor = {}", ejemploScopeService1.equals(ejemploScopeService2));
+		AreaCalculator area = context.getBean(AreaCalculator.class);
+		log.info("el area es  {} ", area.getTotalArea());
 	}
 }
