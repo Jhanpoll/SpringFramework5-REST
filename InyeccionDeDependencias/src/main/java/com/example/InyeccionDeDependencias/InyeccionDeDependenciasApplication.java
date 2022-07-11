@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import com.example.InyeccionDeDependencias.AutowiredFigure.AreaCalculator;
 import com.example.InyeccionDeDependencias.Profiles.EnviromentService;
@@ -26,8 +29,8 @@ public class InyeccionDeDependenciasApplication {
 
 	public static void main(String[] args) {
 
-		ConfigurableApplicationContext context = SpringApplication.run(InyeccionDeDependenciasApplication.class, args);
-		AreaCalculator area = context.getBean(AreaCalculator.class);
-		log.info("el area es  {} ", area.getTotalArea());
+		ExpressionParser expressionParser = new SpelExpressionParser();
+		Expression expression = expressionParser.parseExpression("10 < 20");
+		log.info("expresion es {} ", expression.getValue());
 	}
 }
